@@ -3,12 +3,12 @@ $('#currentDay').text(moment().format('dddd') + ", " + moment().format('MMMM Do 
 
 
 //Click event for saving tasks
-$('.saveBtn').click(saveTask())
+$('.saveBtn').click(saveTask);
 
 //Set variable for Moment JS current hours and CSS property for colors
 var currentHour = moment().hour();
 var timeId = $('#time').text();
-var time = hourFromString(hourString);
+//var time = hourFromString(hourString);
 
 //Case function for converting hours to compare to Moment JS
 function hourFromString(hourString) {
@@ -25,19 +25,36 @@ function hourFromString(hourString) {
       case "5 PM": return 17;
     }
   }
+  var militaryHrArr = [8,9,10,11,12,13,14,15,16,17];
 
 //If/else statement for color properties
 
-if (time < currentHour) {$('col-md-9').addClass('past');}
-else if (time = currentHour){$('col-md-9').addClass('present');}
-else {$('col-md-9').addClass('future');}
+for (var i = 0; i < 10; i++) {
+
+
+  if (localStorage.getItem('event-' + i)) {
+      $('#event-' + i).val(localStorage.getItem('event-' + i));
+  }
+
+  console.log(currentHour, militaryHrArr[i]);
+  if (militaryHrArr[i] < currentHour) {
+    $('#event-' + i).addClass('past');
+  }
+  else if (militaryHrArr[i] === currentHour){
+    $('#event-' + i).addClass('present');
+  }
+  else {
+    $('#event-' + i).addClass('future');
+  }
+}
+
 
 //Puts events into local storage
-//$(document).ready(function(){
-   // if(!localStorage.getItem('dayPlan')) {
-      //  $(local)
-   // }
-//})
+function saveTask(){
+  var id = $(this).attr('data-id');
+  var getValue = $('#event-' + id).val();
+  localStorage.setItem('event-' + id, getValue);  
+}
 
 // Array needed for local storage
 
