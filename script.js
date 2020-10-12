@@ -8,27 +8,12 @@ $('.saveBtn').click(saveTask);
 //Set variable for Moment JS current hours and CSS property for colors
 var currentHour = moment().hour();
 var timeId = $('#time').text();
-//var time = hourFromString(hourString);
 
-//Case function for converting hours to compare to Moment JS
-function hourFromString(hourString) {
-    switch(hourString) {
-      case "8 AM": return 8;
-      case "9 AM": return 9;
-      case "10 AM": return 10;
-      case "11 AM": return 11;
-      case "12 PM": return 12;
-      case "1 PM": return 13;
-      case "2 PM": return 14;
-      case "3 PM": return 15;
-      case "4 PM": return 16;
-      case "5 PM": return 17;
-    }
-  }
+//Array function to compare to Moment JS
   var militaryHrArr = [8,9,10,11,12,13,14,15,16,17];
 
 //If/else statement for color properties
-
+//i cycles to 10 for number of hours in day planner
 for (var i = 0; i < 10; i++) {
 
 
@@ -70,9 +55,3 @@ var dayPlan = {
     '4PM': '',
     '5PM': '',
 };
-
-//Save Task Function
-
-//function saveTask() {
-
-//}
