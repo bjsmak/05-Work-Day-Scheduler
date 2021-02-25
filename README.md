@@ -1,5 +1,5 @@
 # Work-Day-Scheduler
-link to application: <a href="https://bjsmak.github.io/05-Work-Day-Scheduler/">LINK</a>
+link to application: <a href="https://bjsmak.github.io/Work-Day-Scheduler/">LINK</a>
 The main purpose of this is to demonstrate the use of Third Party APIs and local storage to create a day planner.<p>
 By utilizing Moment JS, once can display the current day and time at the top of the page and format the page to change css classes to show if your tasks have been missed or not throughout the day<p>
 <img src="https://i.ibb.co/ZLTZvGv/screenshot-1.png" alt="screenshot"><p><p>
